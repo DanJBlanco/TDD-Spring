@@ -22,4 +22,18 @@ class AccountTest {
         assertEquals(wanted, real);
         assertTrue(real.equals("Daniel"));
     }
+
+
+    @Test
+    void testAccountBalance() {
+
+        Account account = new Account("Daniel", new BigDecimal("3333.123123"));
+
+        assertFalse(account.getBalance().compareTo(BigDecimal.ZERO) < 0);
+        assertTrue(account.getBalance().compareTo(BigDecimal.ZERO) > 0);
+        assertEquals(3333.123123, account.getBalance().doubleValue());
+
+
+
+    }
 }
